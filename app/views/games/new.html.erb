@@ -1,0 +1,18 @@
+<div>
+  <h1>New game!</h1>
+  <div>
+    <%= @letters.join %>
+  </div>
+  <br>
+  <div>
+    <form  action="/score" method="post" data-turbo="false">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <div class="mb-3">
+        <label for="word" class="form-label">What is the longest word you can find?</label>
+        <input type="text" name="word" class="form-control-lg">
+      </div>
+      <button type="submit" class="btn btn-primary">Play!</button>
+    </form>
+  </div>
+
+</div>
